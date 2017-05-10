@@ -19,6 +19,10 @@
             "roomStateServerAddress": {
               "type": "string",
               "id": 2
+            },
+            "roomStateRPCPort": {
+              "type": "int32",
+              "id": 3
             }
           }
         },

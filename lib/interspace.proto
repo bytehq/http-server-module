@@ -9,6 +9,7 @@ service COPRManager {
 message GetServerRequest {
   string roomId = 1;
   string roomStateServerAddress = 2;
+  int32 roomStateRPCPort = 3;
 }
 
 message GetServerResponse {
