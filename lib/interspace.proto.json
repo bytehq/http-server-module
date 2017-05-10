@@ -1,0 +1,195 @@
+{
+  "nested": {
+    "interspace": {
+      "nested": {
+        "COPRManager": {
+          "methods": {
+            "GetServer": {
+              "requestType": "GetServerRequest",
+              "responseType": "GetServerResponse"
+            }
+          }
+        },
+        "GetServerRequest": {
+          "fields": {
+            "roomId": {
+              "type": "string",
+              "id": 1
+            },
+            "roomStateServerAddress": {
+              "type": "string",
+              "id": 2
+            }
+          }
+        },
+        "GetServerResponse": {
+          "fields": {
+            "coprAddress": {
+              "type": "string",
+              "id": 1
+            },
+            "uuid": {
+              "type": "string",
+              "id": 2
+            }
+          }
+        },
+        "RoomState": {
+          "methods": {
+            "Terraform": {
+              "requestType": "TerraformRequest",
+              "requestStream": true,
+              "responseType": "TerraformResponse"
+            },
+            "Pickup": {
+              "requestType": "PickupRequest",
+              "responseType": "PickupResponse"
+            },
+            "RPCCall": {
+              "requestType": "RPCCallRequest",
+              "responseType": "RPCCallResponse"
+            },
+            "BroadcastMessage": {
+              "requestType": "BroadcastMessageRequest",
+              "responseType": "BroadcastMessageResponse",
+              "responseStream": true
+            },
+            "RoomStateMessage": {
+              "requestType": "RoomStateMessageRequest",
+              "requestStream": true,
+              "responseType": "RoomStateMessageResponse"
+            }
+          }
+        },
+        "TerraformRequest": {
+          "fields": {
+            "roomId": {
+              "type": "string",
+              "id": 1
+            },
+            "instruction": {
+              "type": "string",
+              "id": 2
+            }
+          }
+        },
+        "TerraformResponse": {
+          "fields": {}
+        },
+        "PickupRequest": {
+          "fields": {
+            "roomId": {
+              "type": "string",
+              "id": 1
+            },
+            "elementId": {
+              "type": "string",
+              "id": 2
+            },
+            "uuid": {
+              "type": "string",
+              "id": 3
+            }
+          }
+        },
+        "PickupResponse": {
+          "fields": {
+            "validForPickup": {
+              "type": "bool",
+              "id": 1
+            },
+            "x": {
+              "type": "float",
+              "id": 10
+            },
+            "y": {
+              "type": "float",
+              "id": 11
+            },
+            "z": {
+              "type": "float",
+              "id": 12
+            },
+            "rotationX": {
+              "type": "float",
+              "id": 13
+            },
+            "rotation": {
+              "type": "float",
+              "id": 14
+            },
+            "rotationZ": {
+              "type": "float",
+              "id": 15
+            }
+          }
+        },
+        "RPCCallRequest": {
+          "fields": {
+            "roomId": {
+              "type": "string",
+              "id": 1
+            },
+            "senderUUID": {
+              "type": "string",
+              "id": 2
+            },
+            "args": {
+              "type": "string",
+              "id": 5
+            }
+          }
+        },
+        "RPCCallResponse": {
+          "fields": {}
+        },
+        "BroadcastMessageRequest": {
+          "fields": {}
+        },
+        "BroadcastMessageResponse": {
+          "fields": {
+            "roomId": {
+              "type": "string",
+              "id": 1
+            },
+            "message": {
+              "type": "string",
+              "id": 2
+            }
+          }
+        },
+        "RoomStateMessageRequest": {
+          "fields": {
+            "type": {
+              "type": "string",
+              "id": 1
+            },
+            "roomId": {
+              "type": "string",
+              "id": 2
+            },
+            "uuid": {
+              "type": "string",
+              "id": 6
+            },
+            "x": {
+              "type": "float",
+              "id": 7
+            },
+            "y": {
+              "type": "float",
+              "id": 8
+            },
+            "z": {
+              "type": "float",
+              "id": 9
+            }
+          }
+        },
+        "RoomStateMessageResponse": {
+          "fields": {}
+        }
+      }
+    }
+  }
+}

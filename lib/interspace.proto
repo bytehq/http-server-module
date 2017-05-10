@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package interspace;
+
+
+service COPRManager {
+  rpc GetServer (GetServerRequest) returns (GetServerResponse) {}
+}
+message GetServerRequest {
+  string roomId = 1;
+  string roomStateServerAddress = 2;
+}
+
+message GetServerResponse {
+  string coprAddress = 1;
+  string uuid = 2;
+}
+
+
+service RoomState {
+  rpc Terraform (stream TerraformRequest) returns (TerraformResponse) {}
+  rpc Pickup (PickupRequest) returns (PickupResponse) {}
+  rpc RPCCall (RPCCallRequest) returns (RPCCallResponse) {}
+  rpc BroadcastMessage (BroadcastMessageRequest) returns (stream BroadcastMessageResponse) {}
+  rpc RoomStateMessage (stream RoomStateMessageRequest) returns (RoomStateMessageResponse) {}
+}
+
+message TerraformRequest {
+  string roomId = 1;
+  string instruction = 2;
+}
+
+message TerraformResponse {}
+
+message PickupRequest {
+  string roomId = 1;
+  string elementId = 2;
+  string uuid = 3;
+}
+
+message PickupResponse {
+  bool validForPickup = 1;
+
+  float x = 10;
+  float y = 11;
+  float z = 12;
+  float rotationX = 13;
+  float rotation = 14;
+  float rotationZ = 15;
+}
+
+message RPCCallRequest {
+  string roomId = 1;
+  string senderUUID = 2;
+
+  string args = 5;
+}
+
+message RPCCallResponse {}
+
+message BroadcastMessageRequest {}
+
+message BroadcastMessageResponse {
+  string roomId = 1;
+  string message = 2;
+}
+
+message RoomStateMessageRequest {
+  string type = 1;
+
+  string roomId = 2;
+
+  string uuid = 6;
+  float x = 7;
+  float y = 8;
+  float z = 9;
+}
+
+message RoomStateMessageResponse {}
